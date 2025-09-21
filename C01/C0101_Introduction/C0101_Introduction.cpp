@@ -18,10 +18,26 @@ MyStruct getStruct() {
 
 auto [id, val] = getStruct();
 
-int main() {
+void bind() {
   std::cout << u << ", " << v << '\n';
   std::cout << u1 << ", " << v1 << '\n';
   std::cout << u2 << ", " << v2 << '\n';
 
   std::cout << id << ", " << val << '\n';
+}
+
+void iterate_map() {
+  std::map<int, std::string> map1 {
+    {1, "abc"}, {2, "def"}, {3, "xyz"}
+  };
+  for (const auto& elem : map1) {
+    std::cout << elem.first << ": " << elem.second << '\n';
+  }
+  for (const auto& [key, value] : map1) {
+    std::cout << key << ": " << value << '\n';
+  }
+}
+
+int main() {
+  iterate_map();
 }
